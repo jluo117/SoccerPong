@@ -191,6 +191,7 @@ class GameScene: SKScene {
         self.userScore?.text = String(score)
         for i in self.inPlay{
             if i.isHidden == false{
+                self.bounce()
                 return
             }
         }
@@ -199,7 +200,7 @@ class GameScene: SKScene {
     }
     func bounce(){
         for i in self.inPlay{
-            i.physicsBody?.applyImpulse(CGVector(dx: 0, dy: -20))
+            i.physicsBody?.applyImpulse(CGVector(dx: 0, dy: -0.05))
         }
     }
 }
