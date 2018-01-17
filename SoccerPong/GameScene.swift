@@ -1,0 +1,205 @@
+//
+//  GameScene.swift
+//  Pong
+//
+//  Created by james luo on 1/2/18.
+//  Copyright © 2018 james luo. All rights reserved.
+//
+
+import SpriteKit
+import GameplayKit
+
+class GameScene: SKScene {
+    var player = SKSpriteNode()
+    var gameOver = false
+    private var label : SKLabelNode?
+    private var spinnyNode : SKShapeNode?
+    var inPlay = [SKNode]()
+    var endLabel = SKLabelNode(text:"Game Over")
+    var again = SKLabelNode(text:"Tap to play again")
+    var highScoreLabel = SKLabelNode (text:"HighScore")
+    var ballOne: SKSpriteNode?
+    var ballTwo: SKSpriteNode?
+    var ballThree: SKSpriteNode?
+    var score = 0
+    var userScore: SKLabelNode?
+    var playerGoal1: SKSpriteNode?
+    var playerGoal2: SKSpriteNode?
+    var enemyGoal1: SKSpriteNode?
+    var enemyGoal2: SKSpriteNode?
+    var enemyGoal1x: Float?
+    var enemyGoal2x: Float?
+    var enemyGoaly: Float?
+    var playerGoal1x: Float?
+    var playerGoal2x: Float?
+    var playerGoaly: Float?
+    var timer = Timer()
+    override func didMove(to view: SKView) {
+        //self.removeAllChildren()
+        gameOver = false
+        player = self.childNode(withName: "player") as! SKSpriteNode
+        //self.addChild(player)
+        let border = SKPhysicsBody(edgeLoopFrom: self.frame)
+        border.friction = 0
+        border.restitution = 1
+        border.applyImpulse(CGVector(dx: 20, dy: -50))
+        self.physicsBody = border
+        self.ballOne = self.childNode(withName: "BallOne") as? SKSpriteNode
+        self.ballOne?.size.height = self.frame.width/15
+        self.ballOne?.size.width = self.frame.width/15
+        self.ballOne?.physicsBody?.applyImpulse(CGVector(dx: 20, dy: -20))
+        self.ballTwo = self.childNode(withName: "BallTwo") as? SKSpriteNode
+        self.ballTwo?.size.height = self.frame.width/15
+        self.ballTwo?.size.width = self.frame.width/15
+        self.ballTwo?.physicsBody?.applyImpulse(CGVector(dx: 20, dy: -20))
+        self.ballThree = self.childNode(withName: "Ballthree") as? SKSpriteNode
+        self.ballThree?.size.height = self.frame.width/15
+        self.ballThree?.size.width = self.frame.width/15
+        self.ballThree?.physicsBody?.applyImpulse(CGVector(dx: 20, dy: -20))
+        self.inPlay = [ballOne!,ballTwo!,ballThree!]
+        
+        self.userScore = self.childNode(withName: "Score") as? SKLabelNode
+        self.userScore?.position.y = self.frame.height / 2.5
+        self.userScore?.position.x = -(self.frame.width / 2.7)
+        player.position.y = -(self.frame.height / 2) + (self.frame.height/9) + 5
+        player.position.x = 0
+        player.size.width = self.frame.width / 5
+        self.playerGoal1 = (self.childNode(withName: "playerGoal1") as? SKSpriteNode)
+        self.playerGoal1?.position.x = -(self.frame.width / 4)
+        self.playerGoal1?.position.y = -(self.frame.height / 2)
+        self.playerGoal2 = (self.childNode(withName: "playerGoal2") as? SKSpriteNode)
+        self.playerGoal2?.position.x = self.frame.width / 4
+        self.playerGoal2?.position.y = -(self.frame.height / 2)
+        self.enemyGoal1 = (self.childNode(withName: "enemyGoal1") as? SKSpriteNode)
+        self.enemyGoal1?.position.x = -(self.frame.width / 4)
+        self.enemyGoal1?.position.y = self.frame.height / 2
+        self.enemyGoal2 = (self.childNode(withName: "enemyGoal2") as? SKSpriteNode)
+        self.enemyGoal2?.position.x = self.frame.width / 4
+        self.enemyGoal2?.position.y = self.frame.height / 2
+        self.enemyGoal1x = Float ((self.enemyGoal1?.position.x)!)
+        self.enemyGoal2x = Float ((self.enemyGoal2?.position.x)!)
+        self.enemyGoaly = Float ((self.player.position.y) * -1)
+        self.playerGoal1x = Float((self.playerGoal1?.position.x)!)
+        self.playerGoal2x = Float((self.playerGoal2?.position.x)!)
+        self.playerGoaly = Float((self.player.position.y) - 20)
+        self.addChild(again)
+        self.addChild(endLabel)
+        self.addChild(highScoreLabel)
+        self.endLabel.isHidden = true
+        self.again.isHidden = true
+        self.highScoreLabel.isHidden = true
+        //ballPhys?.removeFromParent()
+        // Get label node from scene and store it for use later
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for touch in touches{
+            if (self.gameOver){
+                //self.inPlay = [ballOne!,ballTwo!,ballThree!]
+                for i in self.inPlay{
+                    i.position = CGPoint(x: 0, y: 0)
+                    i.isHidden = false
+                }
+                for i in self.children{
+                    i.isPaused = false
+                }
+                self.score = 0
+                self.endLabel.isHidden = true
+                self.again.isHidden = true
+                self.highScoreLabel.isHidden = true
+                self.gameOver = false
+                return
+            }
+            let location = touch.location(in: self)
+            player.run(SKAction.moveTo(x: location.x, duration: 0.1))
+        }
+    }
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for touch in touches{
+            let location = touch.location(in: self)
+            player.run(SKAction.moveTo(x: location.x, duration: 0.1))
+        }   
+    }
+    override func update(_ currentTime: TimeInterval) {
+        if (self.gameOver){
+            for i in self.children{
+                i.isPaused = true
+            }
+            var highScore = 0
+            if let loadScore = UserDefaults.standard.object(forKey: "highScore")as? Int {
+                highScore = loadScore
+            }
+            if (self.score > highScore){
+                highScore = self.score
+            }
+            UserDefaults.standard.set(highScore, forKey: "highScore")
+            self.endLabel.position = CGPoint(x: 0, y: 0)
+            self.endLabel.fontSize = self.frame.width / 8
+            //self.addChild(endLabel)
+            self.again.position = CGPoint(x: 0, y: self.frame.height / 4)
+            self.again.fontSize = self.frame.width / 8
+            //self.addChild(again)
+            self.highScoreLabel.text = "HighScore " + String(highScore)
+            self.highScoreLabel.position = CGPoint(x: 0, y: -(self.frame.height / 4))
+            self.highScoreLabel.fontSize = self.frame.width / 8
+            //self.addChild(highScoreLabel!)
+            self.endLabel.isHidden = false
+            self.again.isHidden = false
+            self.highScoreLabel.isHidden = false
+            return
+        }
+
+        for i in inPlay{
+            if (i.isHidden){
+                continue
+            }
+            var ySpeed = -40
+            let xCord = Float(i.position.x)
+            let yCord = Float(i.position.y)
+            if ((xCord > enemyGoal1x!) && (xCord < enemyGoal2x!) && (yCord > enemyGoaly!)){
+                score += 1
+                i.position = CGPoint(x: 0, y: 0)
+                i.physicsBody?.velocity = CGVector(dx: 0, dy: -1)
+                if (score < 30){
+                    ySpeed += -score
+                }
+                else{
+                    ySpeed = -75
+                }
+                i.physicsBody?.applyImpulse(CGVector(dx: Int(arc4random_uniform(30)) - 15, dy: ySpeed))
+                if (score % 5 == 0){
+                    for i in self.inPlay{
+                        i.physicsBody?.applyImpulse((CGVector (dx: 20, dy: -10)))
+                    }
+                }
+            }
+            else if ((xCord > playerGoal1x!) && (xCord < playerGoal2x!) && (yCord < playerGoaly!)){
+                i.isHidden = true
+            }
+            else if((xCord < enemyGoal1x!) && (yCord > enemyGoaly!)){
+                i.physicsBody?.applyImpulse(CGVector(dx: 20, dy: -15))
+            }
+            else if((xCord > enemyGoal2x!) && (yCord > enemyGoaly!)){
+                i.physicsBody?.applyImpulse(CGVector(dx: -20, dy: -15))
+            }
+            else if ((xCord < playerGoal1x!) && (yCord < playerGoaly!) ){
+                i.physicsBody?.applyImpulse(CGVector(dx: 20, dy: 15))
+            }
+            else if ((xCord > playerGoal2x!) && (yCord < playerGoaly!)){
+                i.physicsBody?.applyImpulse(CGVector(dx: -20, dy: 15))
+            }
+        }
+        self.userScore?.text = String(score)
+        for i in self.inPlay{
+            if i.isHidden == false{
+                return
+            }
+        }
+        self.gameOver = true
+                // Called before each frame is rendered
+    }
+    func bounce(){
+        for i in self.inPlay{
+            i.physicsBody?.applyImpulse(CGVector(dx: 0, dy: -20))
+        }
+    }
+}
