@@ -90,8 +90,8 @@
 			isa = PBXGroup;
 			children = (
 				795C2CD61FFC216300D19BA9 /* SoccerPong */,
-				795C2CF11FFC216300D19BA9 /* PongTests */,
-				795C2CFC1FFC216300D19BA9 /* PongUITests */,
+				795C2CF11FFC216300D19BA9 /* SoccerPongTests */,
+				795C2CFC1FFC216300D19BA9 /* SoccerPongUITests */,
 				795C2CD51FFC216300D19BA9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -125,22 +125,22 @@
 			path = SoccerPong;
 			sourceTree = "<group>";
 		};
-		795C2CF11FFC216300D19BA9 /* PongTests */ = {
+		795C2CF11FFC216300D19BA9 /* SoccerPongTests */ = {
 			isa = PBXGroup;
 			children = (
 				795C2CF21FFC216300D19BA9 /* PongTests.swift */,
 				795C2CF41FFC216300D19BA9 /* Info.plist */,
 			);
-			path = PongTests;
+			path = SoccerPongTests;
 			sourceTree = "<group>";
 		};
-		795C2CFC1FFC216300D19BA9 /* PongUITests */ = {
+		795C2CFC1FFC216300D19BA9 /* SoccerPongUITests */ = {
 			isa = PBXGroup;
 			children = (
 				795C2CFD1FFC216300D19BA9 /* PongUITests.swift */,
 				795C2CFF1FFC216300D19BA9 /* Info.plist */,
 			);
-			path = PongUITests;
+			path = SoccerPongUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
