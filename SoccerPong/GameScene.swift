@@ -45,6 +45,7 @@ class GameScene: SKScene {
         border.applyImpulse(CGVector(dx: 20, dy: -50))
         self.physicsBody = border
         self.ballOne = self.childNode(withName: "BallOne") as? SKSpriteNode
+        self.ballOne?.position = CGPoint(x: 0, y: 0)
         self.ballOne?.size.height = self.frame.width/15
         self.ballOne?.size.width = self.frame.width/15
         self.ballOne?.physicsBody?.applyImpulse(CGVector(dx: 20, dy: -20))
@@ -52,9 +53,11 @@ class GameScene: SKScene {
         self.ballTwo?.size.height = self.frame.width/15
         self.ballTwo?.size.width = self.frame.width/15
         self.ballTwo?.physicsBody?.applyImpulse(CGVector(dx: 20, dy: -20))
+        self.ballTwo?.position = CGPoint(x: self.frame.width/4, y: 0)
         self.ballThree = self.childNode(withName: "Ballthree") as? SKSpriteNode
         self.ballThree?.size.height = self.frame.width/15
         self.ballThree?.size.width = self.frame.width/15
+        self.ballThree?.position = CGPoint(x: -(self.frame.width/4), y: 0)
         self.ballThree?.physicsBody?.applyImpulse(CGVector(dx: 20, dy: -20))
         self.inPlay = [ballOne!,ballTwo!,ballThree!]
         
@@ -94,9 +97,15 @@ class GameScene: SKScene {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches{
             if (self.gameOver){
+                self.ballOne?.position = CGPoint(x: 0, y: 0)
+                self.ballTwo?.position = CGPoint(x: self.frame.width/4, y: 0)
+                self.ballThree?.position = CGPoint(x: -(self.frame.width/4), y: 0)
+
                 //self.inPlay = [ballOne!,ballTwo!,ballThree!]
+                
                 for i in self.inPlay{
-                    i.position = CGPoint(x: 0, y: 0)
+                    i.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
+                    i.physicsBody?.applyImpulse(CGVector(dx: 20, dy: -20))
                     i.isHidden = false
                 }
                 for i in self.children{
@@ -121,6 +130,7 @@ class GameScene: SKScene {
     }
     override func update(_ currentTime: TimeInterval) {
         if (self.gameOver){
+            self.player.position.x = 0
             for i in self.children{
                 i.isPaused = true
             }
