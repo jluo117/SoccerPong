@@ -19,7 +19,6 @@
 		795C2CFE1FFC216300D19BA9 /* PongUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795C2CFD1FFC216300D19BA9 /* PongUITests.swift */; };
 		795C2D0C1FFC234700D19BA9 /* Ball.png in Resources */ = {isa = PBXBuildFile; fileRef = 795C2D0B1FFC234700D19BA9 /* Ball.png */; };
 		798CD93E200F1DF6008290B4 /* menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798CD93D200F1DF6008290B4 /* menu.swift */; };
-		79EC52FC2005F021005F812B /* GameOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EC52FB2005F020005F812B /* GameOver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +57,6 @@
 		795C2CFF1FFC216300D19BA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		795C2D0B1FFC234700D19BA9 /* Ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Ball.png; path = Assets.xcassets/Ball.png; sourceTree = "<group>"; };
 		798CD93D200F1DF6008290B4 /* menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = menu.swift; sourceTree = "<group>"; };
-		79EC52FB2005F020005F812B /* GameOver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,7 +112,6 @@
 				798CD93D200F1DF6008290B4 /* menu.swift */,
 				795C2CDB1FFC216300D19BA9 /* Actions.sks */,
 				795C2CDD1FFC216300D19BA9 /* GameScene.swift */,
-				79EC52FB2005F020005F812B /* GameOver.swift */,
 				795C2CDF1FFC216300D19BA9 /* GameViewController.swift */,
 				795C2CE11FFC216300D19BA9 /* Main.storyboard */,
 				795C2CE41FFC216300D19BA9 /* Assets.xcassets */,
@@ -283,7 +280,6 @@
 				795C2CDE1FFC216300D19BA9 /* GameScene.swift in Sources */,
 				795C2CE01FFC216300D19BA9 /* GameViewController.swift in Sources */,
 				798CD93E200F1DF6008290B4 /* menu.swift in Sources */,
-				79EC52FC2005F021005F812B /* GameOver.swift in Sources */,
 				795C2CD81FFC216300D19BA9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
