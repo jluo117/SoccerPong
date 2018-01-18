@@ -130,44 +130,7 @@ class GameScene: SKScene {
     }
     override func update(_ currentTime: TimeInterval) {
         if (self.gameOver){
-            self.playerGoal2?.position.x = self.frame.width / 4
-            self.playerGoal2?.position.y = -(self.frame.height / 2)
-            self.playerGoal1?.position.x = -(self.frame.width / 4)
-            self.playerGoal1?.position.y = -(self.frame.height / 2)
-            self.enemyGoal2?.position.x = (self.frame.width / 4)
-            self.enemyGoal1?.position.x = -(self.frame.width / 4)
-            self.enemyGoal1?.position.y = self.frame.height / 2
-            self.enemyGoal1x = Float ((self.enemyGoal1?.position.x)!)
-            self.enemyGoal2x = Float ((self.enemyGoal2?.position.x)!)
-            self.enemyGoaly = Float ((self.player.position.y) * -1)
-            self.playerGoal1x = Float((self.playerGoal1?.position.x)!)
-            self.playerGoal2x = Float((self.playerGoal2?.position.x)!)
-            self.playerGoaly = Float((self.player.position.y) - 20)
-            self.player.position.x = 0
-            for i in self.children{
-                i.isPaused = true
-            }
-            var highScore = 0
-            if let loadScore = UserDefaults.standard.object(forKey: "highScore")as? Int {
-                highScore = loadScore
-            }
-            if (self.score > highScore){
-                highScore = self.score
-            }
-            UserDefaults.standard.set(highScore, forKey: "highScore")
-            self.endLabel.position = CGPoint(x: 0, y: 0)
-            self.endLabel.fontSize = self.frame.width / 8
-            //self.addChild(endLabel)
-            self.again.position = CGPoint(x: 0, y: self.frame.height / 4)
-            self.again.fontSize = self.frame.width / 8
-            //self.addChild(again)
-            self.highScoreLabel.text = "HighScore " + String(highScore)
-            self.highScoreLabel.position = CGPoint(x: 0, y: -(self.frame.height / 4))
-            self.highScoreLabel.fontSize = self.frame.width / 8
-            //self.addChild(highScoreLabel!)
-            self.endLabel.isHidden = false
-            self.again.isHidden = false
-            self.highScoreLabel.isHidden = false
+            
             return
         }
 
@@ -217,6 +180,44 @@ class GameScene: SKScene {
                     }
                 }
                 self.gameOver = true
+                self.playerGoal2?.position.x = self.frame.width / 4
+                self.playerGoal2?.position.y = -(self.frame.height / 2)
+                self.playerGoal1?.position.x = -(self.frame.width / 4)
+                self.playerGoal1?.position.y = -(self.frame.height / 2)
+                self.enemyGoal2?.position.x = (self.frame.width / 4)
+                self.enemyGoal1?.position.x = -(self.frame.width / 4)
+                self.enemyGoal1?.position.y = self.frame.height / 2
+                self.enemyGoal1x = Float ((self.enemyGoal1?.position.x)!)
+                self.enemyGoal2x = Float ((self.enemyGoal2?.position.x)!)
+                self.enemyGoaly = Float ((self.player.position.y) * -1)
+                self.playerGoal1x = Float((self.playerGoal1?.position.x)!)
+                self.playerGoal2x = Float((self.playerGoal2?.position.x)!)
+                self.playerGoaly = Float((self.player.position.y) - 20)
+                self.player.position.x = 0
+                for i in self.children{
+                    i.isPaused = true
+                }
+                var highScore = 0
+                if let loadScore = UserDefaults.standard.object(forKey: "highScore")as? Int {
+                    highScore = loadScore
+                }
+                if (self.score > highScore){
+                    highScore = self.score
+                }
+                UserDefaults.standard.set(highScore, forKey: "highScore")
+                self.endLabel.position = CGPoint(x: 0, y: 0)
+                self.endLabel.fontSize = self.frame.width / 8
+                //self.addChild(endLabel)
+                self.again.position = CGPoint(x: 0, y: self.frame.height / 4)
+                self.again.fontSize = self.frame.width / 8
+                //self.addChild(again)
+                self.highScoreLabel.text = "HighScore " + String(highScore)
+                self.highScoreLabel.position = CGPoint(x: 0, y: -(self.frame.height / 4))
+                self.highScoreLabel.fontSize = self.frame.width / 8
+                //self.addChild(highScoreLabel!)
+                self.endLabel.isHidden = false
+                self.again.isHidden = false
+                self.highScoreLabel.isHidden = false
             }
             else if((xCord < enemyGoal1x!) && (yCord > enemyGoaly!)){
                 //i.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
