@@ -130,6 +130,19 @@ class GameScene: SKScene {
     }
     override func update(_ currentTime: TimeInterval) {
         if (self.gameOver){
+            self.playerGoal2?.position.x = self.frame.width / 4
+            self.playerGoal2?.position.y = -(self.frame.height / 2)
+            self.playerGoal1?.position.x = -(self.frame.width / 4)
+            self.playerGoal1?.position.y = -(self.frame.height / 2)
+            self.enemyGoal2?.position.x = (self.frame.width / 4)
+            self.enemyGoal1?.position.x = -(self.frame.width / 4)
+            self.enemyGoal1?.position.y = self.frame.height / 2
+            self.enemyGoal1x = Float ((self.enemyGoal1?.position.x)!)
+            self.enemyGoal2x = Float ((self.enemyGoal2?.position.x)!)
+            self.enemyGoaly = Float ((self.player.position.y) * -1)
+            self.playerGoal1x = Float((self.playerGoal1?.position.x)!)
+            self.playerGoal2x = Float((self.playerGoal2?.position.x)!)
+            self.playerGoaly = Float((self.player.position.y) - 20)
             self.player.position.x = 0
             for i in self.children{
                 i.isPaused = true
@@ -162,7 +175,7 @@ class GameScene: SKScene {
             if (i.isHidden){
                 continue
             }
-            var ySpeed = -40
+            var ySpeed = -20
             let xCord = Float(i.position.x)
             let yCord = Float(i.position.y)
             if ((xCord > enemyGoal1x!) && (xCord < enemyGoal2x!) && (yCord > enemyGoaly!)){
@@ -173,39 +186,56 @@ class GameScene: SKScene {
                     ySpeed += -score
                 }
                 else{
-                    ySpeed = -75
+                    ySpeed = -50
                 }
+                i.physicsBody?.velocity = (CGVector(dx: 0, dy: 0))
                 i.physicsBody?.applyImpulse(CGVector(dx: Int(arc4random_uniform(30)) - 15, dy: ySpeed))
                 if (score % 5 == 0){
                     for i in self.inPlay{
                         i.physicsBody?.applyImpulse((CGVector (dx: 20, dy: -10)))
                     }
                 }
+                if (score % 10 == 0 && score < 40){
+                    self.enemyGoal1?.position.x = CGFloat(-(Float(self.frame.width) / Float (4 + (score / 10))))
+                    self.enemyGoal2?.position.x = (CGFloat(Float(self.frame.width) / Float (4 + (score / 10))))
+                    self.enemyGoal1x = Float((self.enemyGoal1?.position.x)!)
+                    self.enemyGoal2x = Float((self.enemyGoal2?.position.x)!)
+                }
+                if (score == 15){
+                    self.playerGoal1?.position.x = CGFloat(-(Float(self.frame.width) / 3))
+                    self.playerGoal2?.position.x = CGFloat((Float(self.frame.width) / 3))
+                    self.playerGoal1x = Float((self.playerGoal1?.position.x)!)
+                    self.playerGoal2x = Float((self.playerGoal2?.position.x)!)
+                }
             }
             else if ((xCord > playerGoal1x!) && (xCord < playerGoal2x!) && (yCord < playerGoaly!)){
                 i.isHidden = true
+                for j in self.inPlay{
+                    if j.isHidden == false{
+                        self.bounce()
+                        return
+                    }
+                }
+                self.gameOver = true
             }
             else if((xCord < enemyGoal1x!) && (yCord > enemyGoaly!)){
-                i.physicsBody?.applyImpulse(CGVector(dx: 20, dy: -15))
+                //i.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
+                i.physicsBody?.applyImpulse(CGVector(dx: 5, dy: -(ySpeed/2)))
             }
             else if((xCord > enemyGoal2x!) && (yCord > enemyGoaly!)){
-                i.physicsBody?.applyImpulse(CGVector(dx: -20, dy: -15))
+                //i.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
+                i.physicsBody?.applyImpulse(CGVector(dx: -5, dy: -(ySpeed/2)))
             }
             else if ((xCord < playerGoal1x!) && (yCord < playerGoaly!) ){
-                i.physicsBody?.applyImpulse(CGVector(dx: 20, dy: 15))
+                //i.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
+                i.physicsBody?.applyImpulse(CGVector(dx: 5, dy:(ySpeed/2)))
             }
             else if ((xCord > playerGoal2x!) && (yCord < playerGoaly!)){
-                i.physicsBody?.applyImpulse(CGVector(dx: -20, dy: 15))
+                //i.physicsBody?.velocity = CGVector(dx: -5, dy: 10)
+                i.physicsBody?.applyImpulse(CGVector(dx: -5, dy: ySpeed/2))
             }
         }
         self.userScore?.text = String(score)
-        for i in self.inPlay{
-            if i.isHidden == false{
-                self.bounce()
-                return
-            }
-        }
-        self.gameOver = true
                 // Called before each frame is rendered
     }
     func bounce(){
