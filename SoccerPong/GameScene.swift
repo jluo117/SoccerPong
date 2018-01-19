@@ -18,6 +18,7 @@ class GameScene: SKScene {
     var endLabel = SKLabelNode(text:"Game Over")
     var again = SKLabelNode(text:"Tap to play again")
     var highScoreLabel = SKLabelNode (text:"HighScore")
+    var StartLabel = SKLabelNode(text: "Start")
     var ballOne: SKSpriteNode?
     var ballTwo: SKSpriteNode?
     var ballThree: SKSpriteNode?
@@ -34,8 +35,13 @@ class GameScene: SKScene {
     var playerGoal2x: Float?
     var playerGoaly: Float?
     var timer = Timer()
+    var gameStart = false
     override func didMove(to view: SKView) {
         //self.removeAllChildren()
+        StartLabel.position = CGPoint(x: 0, y: self.frame.height/8)
+        self.StartLabel.fontSize = self.frame.width / 8
+        self.addChild(StartLabel)
+        StartLabel.isHidden = false
         gameOver = false
         player = self.childNode(withName: "player") as! SKSpriteNode
         //self.addChild(player)
@@ -48,20 +54,19 @@ class GameScene: SKScene {
         self.ballOne?.position = CGPoint(x: 0, y: 0)
         self.ballOne?.size.height = self.frame.width/15
         self.ballOne?.size.width = self.frame.width/15
-        self.ballOne?.physicsBody?.applyImpulse(CGVector(dx: 20, dy: -20))
+        
         self.ballTwo = self.childNode(withName: "BallTwo") as? SKSpriteNode
         self.ballTwo?.size.height = self.frame.width/15
         self.ballTwo?.size.width = self.frame.width/15
-        self.ballTwo?.physicsBody?.applyImpulse(CGVector(dx: 20, dy: -20))
         self.ballTwo?.position = CGPoint(x: self.frame.width/4, y: 0)
         self.ballThree = self.childNode(withName: "Ballthree") as? SKSpriteNode
         self.ballThree?.size.height = self.frame.width/15
         self.ballThree?.size.width = self.frame.width/15
         self.ballThree?.position = CGPoint(x: -(self.frame.width/4), y: 0)
-        self.ballThree?.physicsBody?.applyImpulse(CGVector(dx: 20, dy: -20))
         self.inPlay = [ballOne!,ballTwo!,ballThree!]
         
         self.userScore = self.childNode(withName: "Score") as? SKLabelNode
+        self.userScore?.text = "0"
         self.userScore?.position.y = self.frame.height / 2.5
         self.userScore?.position.x = -(self.frame.width / 2.7)
         player.position.y = -(self.frame.height / 2) + (self.frame.height/9) + 5
@@ -91,6 +96,9 @@ class GameScene: SKScene {
         self.endLabel.isHidden = true
         self.again.isHidden = true
         self.highScoreLabel.isHidden = true
+        for i in self.children{
+            i.isPaused = true
+        }
         //ballPhys?.removeFromParent()
         // Get label node from scene and store it for use later
     }
@@ -119,6 +127,17 @@ class GameScene: SKScene {
                 return
             }
             let location = touch.location(in: self)
+            if (!self.gameStart){
+                self.gameStart = true
+                self.StartLabel.isHidden = true
+                for i in self.children{
+                    i.isPaused = false
+                }
+                self.ballOne?.physicsBody?.applyImpulse(CGVector(dx: 20, dy: -20))
+                self.ballTwo?.physicsBody?.applyImpulse(CGVector(dx: 20, dy: -20))
+                self.ballThree?.physicsBody?.applyImpulse(CGVector(dx: 20, dy: -20))
+                return
+            }
             player.run(SKAction.moveTo(x: location.x, duration: 0.1))
         }
     }
@@ -129,6 +148,9 @@ class GameScene: SKScene {
         }   
     }
     override func update(_ currentTime: TimeInterval) {
+        if (!self.gameStart){
+            return
+        }
         if (self.gameOver){
             
             return
