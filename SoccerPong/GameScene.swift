@@ -8,7 +8,7 @@
 
 import SpriteKit
 import GameplayKit
-
+import Firebase
 class GameScene: SKScene {
     var player = SKSpriteNode()
     var gameOver = false
@@ -19,6 +19,7 @@ class GameScene: SKScene {
     var again = SKLabelNode(text:"Tap to play again")
     var highScoreLabel = SKLabelNode (text:"HighScore")
     var StartLabel = SKLabelNode(text: "Start")
+    var onlineScore = SKLabelNode(text: "Global")
     var ballOne: SKSpriteNode?
     var ballTwo: SKSpriteNode?
     var ballThree: SKSpriteNode?
@@ -42,6 +43,8 @@ class GameScene: SKScene {
         self.StartLabel.fontSize = self.frame.width / 8
         self.addChild(StartLabel)
         StartLabel.isHidden = false
+        self.addChild(onlineScore)
+        self.onlineScore.isHidden = true
         gameOver = false
         player = self.childNode(withName: "player") as! SKSpriteNode
         //self.addChild(player)
@@ -124,6 +127,7 @@ class GameScene: SKScene {
                 self.again.isHidden = true
                 self.highScoreLabel.isHidden = true
                 self.gameOver = false
+                self.onlineScore.isHidden = true
                 return
             }
             let location = touch.location(in: self)
@@ -219,7 +223,25 @@ class GameScene: SKScene {
                 for i in self.children{
                     i.isPaused = true
                 }
+                var globalScore = 9999
+                var ref = Database.database().reference()
+                ref.observe(.value) { snapshot in
+                    let value = snapshot.value as? NSDictionary
+                    globalScore = Int(value!["Score"] as! Int)
+                    if (self.score > globalScore){
+                        ref.setValue(["Score": self.score])
+                        self.onlineScore.text = "Global HighScore " + String(self.score)
+                        
+                    }
+                    else{
+                        self.onlineScore.text = "Global HighScore " + String(globalScore)
+                    }
+                    self.highScoreLabel.isHidden = false
+                    print(globalScore)
+                }
+               
                 var highScore = 0
+                
                 if let loadScore = UserDefaults.standard.object(forKey: "highScore")as? Int {
                     highScore = loadScore
                 }
@@ -234,12 +256,14 @@ class GameScene: SKScene {
                 self.again.fontSize = self.frame.width / 8
                 //self.addChild(again)
                 self.highScoreLabel.text = "HighScore " + String(highScore)
-                self.highScoreLabel.position = CGPoint(x: 0, y: -(self.frame.height / 4))
+                self.highScoreLabel.position = CGPoint(x: 0, y: -(self.frame.height / 8))
                 self.highScoreLabel.fontSize = self.frame.width / 8
+                self.onlineScore.position = CGPoint(x: 0, y: -(self.frame.height / 4))
+                self.onlineScore.fontSize = self.frame.width / 10
                 //self.addChild(highScoreLabel!)
                 self.endLabel.isHidden = false
                 self.again.isHidden = false
-                self.highScoreLabel.isHidden = false
+                self.onlineScore.isHidden = false
             }
             else if((xCord < enemyGoal1x!) && (yCord > enemyGoaly!)){
                 //i.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
