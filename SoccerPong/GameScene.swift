@@ -263,7 +263,6 @@ class GameScene: SKScene {
                 //self.addChild(highScoreLabel!)
                 self.endLabel.isHidden = false
                 self.again.isHidden = false
-                self.onlineScore.isHidden = false
             }
             else if((xCord < enemyGoal1x!) && (yCord > enemyGoaly!)){
                 //i.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
