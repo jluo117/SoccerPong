@@ -24,7 +24,11 @@ class menu: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func Clear(_ sender: UIButton) {
+        let highScore = 0
+        UserDefaults.standard.set(highScore, forKey: "highScore")
+    }
+    
     /*
     // MARK: - Navigation
 

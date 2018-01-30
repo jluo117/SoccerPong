@@ -45,6 +45,17 @@
                                     <segue destination="BV1-FR-VrT" kind="show" identifier="endGame" id="iDR-0v-moM"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lMG-hh-mHM">
+                                <rect key="frame" x="157" y="408" width="61" height="76"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="76" id="raZ-yC-udd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Clear"/>
+                                <connections>
+                                    <action selector="Clear:" destination="QAQ-Lh-P8H" eventType="touchUpInside" id="JLb-rt-8Qt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -55,6 +66,8 @@
                                 <variation key="heightClass=regular-widthClass=regular" constant="40.5"/>
                             </constraint>
                             <constraint firstItem="clj-3j-V5c" firstAttribute="centerX" secondItem="bRk-Pn-UDb" secondAttribute="centerX" id="C0A-pn-yyE"/>
+                            <constraint firstItem="lMG-hh-mHM" firstAttribute="leading" secondItem="juo-0J-oP5" secondAttribute="leading" constant="157" id="Ci9-80-SIX"/>
+                            <constraint firstItem="lMG-hh-mHM" firstAttribute="top" secondItem="zjO-jR-f8q" secondAttribute="bottom" constant="8" id="DtP-Iq-GUX"/>
                             <constraint firstItem="juo-0J-oP5" firstAttribute="bottom" secondItem="zjO-jR-f8q" secondAttribute="bottom" constant="646" id="KDl-fw-INA">
                                 <variation key="heightClass=regular-widthClass=regular" constant="373"/>
                             </constraint>
@@ -73,6 +86,7 @@
                             <constraint firstItem="clj-3j-V5c" firstAttribute="centerX" secondItem="bRk-Pn-UDb" secondAttribute="centerX" id="gPN-n4-UN1">
                                 <variation key="heightClass=regular-widthClass=regular" constant="-33"/>
                             </constraint>
+                            <constraint firstItem="lMG-hh-mHM" firstAttribute="centerX" secondItem="zjO-jR-f8q" secondAttribute="centerX" id="hRP-x4-1dR"/>
                             <constraint firstItem="zjO-jR-f8q" firstAttribute="top" secondItem="clj-3j-V5c" secondAttribute="bottom" constant="17" id="kTa-M5-8m5">
                                 <variation key="heightClass=regular-widthClass=compact" constant="16"/>
                             </constraint>
@@ -130,7 +144,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Yp-IE-vaH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-257.03125" y="67.96875"/>
+            <point key="canvasLocation" x="-258.59375" y="67.3828125"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">

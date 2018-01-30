@@ -1,0 +1,6 @@
+framework module Pods_SoccerPongUITests {
+  umbrella header "Pods-SoccerPongUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
