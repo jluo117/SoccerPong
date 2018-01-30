@@ -236,7 +236,7 @@ class GameScene: SKScene {
                     else{
                         self.onlineScore.text = "Global HighScore " + String(globalScore)
                     }
-                    self.highScoreLabel.isHidden = false
+                    self.onlineScore.isHidden = false
                     print(globalScore)
                 }
                
@@ -258,6 +258,7 @@ class GameScene: SKScene {
                 self.highScoreLabel.text = "HighScore " + String(highScore)
                 self.highScoreLabel.position = CGPoint(x: 0, y: -(self.frame.height / 8))
                 self.highScoreLabel.fontSize = self.frame.width / 8
+                self.highScoreLabel.isHidden = false
                 self.onlineScore.position = CGPoint(x: 0, y: -(self.frame.height / 4))
                 self.onlineScore.fontSize = self.frame.width / 10
                 //self.addChild(highScoreLabel!)
