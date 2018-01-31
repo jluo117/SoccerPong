@@ -237,7 +237,6 @@ class GameScene: SKScene {
                         self.onlineScore.text = "Global HighScore " + String(globalScore)
                     }
                     self.onlineScore.isHidden = false
-                    print(globalScore)
                 }
                
                 var highScore = 0

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QAQ-Lh-P8H">
-    <device id="retina4_7" orientation="portrait">
+    <device id="ipad12_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,15 +15,15 @@
             <objects>
                 <viewController id="QAQ-Lh-P8H" customClass="menu" customModule="SoccerPong" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bRk-Pn-UDb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SoccerPong" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clj-3j-V5c">
-                                <rect key="frame" x="87" y="247" width="201" height="74"/>
+                                <rect key="frame" x="213" y="335" width="532" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="74" id="o2Z-m5-2Ga"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
@@ -37,23 +37,23 @@
                                     </mask>
                                 </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lMG-hh-mHM">
+                                <rect key="frame" x="109" y="1040" width="740" height="76"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="76" id="raZ-yC-udd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <state key="normal" title="Clear"/>
+                                <connections>
+                                    <action selector="Clear:" destination="QAQ-Lh-P8H" eventType="touchUpInside" id="JLb-rt-8Qt"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zjO-jR-f8q">
-                                <rect key="frame" x="149.5" y="337" width="76" height="63"/>
+                                <rect key="frame" x="237" y="454" width="484.5" height="539"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="42"/>
                                 <state key="normal" title="Play"/>
                                 <connections>
                                     <segue destination="BV1-FR-VrT" kind="show" identifier="endGame" id="iDR-0v-moM"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lMG-hh-mHM">
-                                <rect key="frame" x="157" y="408" width="61" height="76"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="76" id="raZ-yC-udd"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="Clear"/>
-                                <connections>
-                                    <action selector="Clear:" destination="QAQ-Lh-P8H" eventType="touchUpInside" id="JLb-rt-8Qt"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -66,8 +66,8 @@
                                 <variation key="heightClass=regular-widthClass=regular" constant="40.5"/>
                             </constraint>
                             <constraint firstItem="clj-3j-V5c" firstAttribute="centerX" secondItem="bRk-Pn-UDb" secondAttribute="centerX" id="C0A-pn-yyE"/>
-                            <constraint firstItem="lMG-hh-mHM" firstAttribute="leading" secondItem="juo-0J-oP5" secondAttribute="leading" constant="157" id="Ci9-80-SIX"/>
-                            <constraint firstItem="lMG-hh-mHM" firstAttribute="top" secondItem="zjO-jR-f8q" secondAttribute="bottom" constant="8" id="DtP-Iq-GUX"/>
+                            <constraint firstItem="lMG-hh-mHM" firstAttribute="leading" secondItem="juo-0J-oP5" secondAttribute="leading" constant="109" id="Ci9-80-SIX"/>
+                            <constraint firstItem="lMG-hh-mHM" firstAttribute="top" secondItem="zjO-jR-f8q" secondAttribute="bottom" constant="47" id="DtP-Iq-GUX"/>
                             <constraint firstItem="juo-0J-oP5" firstAttribute="bottom" secondItem="zjO-jR-f8q" secondAttribute="bottom" constant="646" id="KDl-fw-INA">
                                 <variation key="heightClass=regular-widthClass=regular" constant="373"/>
                             </constraint>
@@ -77,7 +77,7 @@
                             </constraint>
                             <constraint firstItem="clj-3j-V5c" firstAttribute="centerX" secondItem="zjO-jR-f8q" secondAttribute="centerX" id="Un8-Hh-Rp4"/>
                             <constraint firstItem="clj-3j-V5c" firstAttribute="leading" secondItem="juo-0J-oP5" secondAttribute="leading" constant="111" id="VTe-3W-lTC">
-                                <variation key="heightClass=regular-widthClass=compact" constant="87"/>
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="zjO-jR-f8q" firstAttribute="top" secondItem="clj-3j-V5c" secondAttribute="bottom" constant="75" id="eVm-ZL-xWD">
                                 <variation key="widthClass=regular" constant="29"/>
@@ -88,10 +88,10 @@
                             </constraint>
                             <constraint firstItem="lMG-hh-mHM" firstAttribute="centerX" secondItem="zjO-jR-f8q" secondAttribute="centerX" id="hRP-x4-1dR"/>
                             <constraint firstItem="zjO-jR-f8q" firstAttribute="top" secondItem="clj-3j-V5c" secondAttribute="bottom" constant="17" id="kTa-M5-8m5">
-                                <variation key="heightClass=regular-widthClass=compact" constant="16"/>
+                                <variation key="heightClass=regular-widthClass=compact" constant="33"/>
                             </constraint>
                             <constraint firstItem="clj-3j-V5c" firstAttribute="top" secondItem="juo-0J-oP5" secondAttribute="top" constant="226" id="lFK-5p-M3e">
-                                <variation key="heightClass=regular-widthClass=compact" constant="227"/>
+                                <variation key="heightClass=regular-widthClass=compact" constant="171"/>
                             </constraint>
                             <constraint firstItem="zjO-jR-f8q" firstAttribute="leading" secondItem="juo-0J-oP5" secondAttribute="leading" constant="442" id="uwM-JY-Xv7">
                                 <variation key="heightClass=regular-widthClass=regular" constant="237"/>
@@ -144,14 +144,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Yp-IE-vaH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-258.59375" y="67.3828125"/>
+            <point key="canvasLocation" x="-260" y="66.502463054187189"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
                 <viewController id="BV1-FR-VrT" customClass="GameViewController" customModule="SoccerPong" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
