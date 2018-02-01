@@ -224,7 +224,7 @@ class GameScene: SKScene {
                     i.isPaused = true
                 }
                 var globalScore = 9999
-                var ref = Database.database().reference()
+                let ref = Database.database().reference()
                 ref.observe(.value) { snapshot in
                     let value = snapshot.value as? NSDictionary
                     globalScore = Int(value!["Score"] as! Int)

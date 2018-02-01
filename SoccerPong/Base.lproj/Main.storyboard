@@ -13,7 +13,7 @@
         <!--Menu-->
         <scene sceneID="f0P-PA-i47">
             <objects>
-                <viewController id="QAQ-Lh-P8H" customClass="menu" customModule="SoccerPong" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Menu" title="Menu" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QAQ-Lh-P8H" customClass="menu" customModule="SoccerPong" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bRk-Pn-UDb">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -53,7 +53,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="42"/>
                                 <state key="normal" title="Play"/>
                                 <connections>
-                                    <segue destination="BV1-FR-VrT" kind="show" identifier="endGame" id="iDR-0v-moM"/>
+                                    <segue destination="BV1-FR-VrT" kind="showDetail" identifier="StartGame" action="showViewController:sender:" id="iDR-0v-moM"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -156,9 +156,6 @@
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
                     </view>
-                    <connections>
-                        <segue destination="QAQ-Lh-P8H" kind="show" id="Qf7-pV-UlL"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
