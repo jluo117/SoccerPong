@@ -35,6 +35,7 @@ class GameScene: SKScene {
     var playerGoal1x: Float?
     var playerGoal2x: Float?
     var playerGoaly: Float?
+    var upperBoundy: Float?
     var timer = Timer()
     var gameStart = false
     override func didMove(to view: SKView) {
@@ -57,7 +58,6 @@ class GameScene: SKScene {
         self.ballOne?.position = CGPoint(x: 0, y: 0)
         self.ballOne?.size.height = self.frame.width/15
         self.ballOne?.size.width = self.frame.width/15
-        
         self.ballTwo = self.childNode(withName: "BallTwo") as? SKSpriteNode
         self.ballTwo?.size.height = self.frame.width/15
         self.ballTwo?.size.width = self.frame.width/15
@@ -67,7 +67,6 @@ class GameScene: SKScene {
         self.ballThree?.size.width = self.frame.width/15
         self.ballThree?.position = CGPoint(x: -(self.frame.width/4), y: 0)
         self.inPlay = [ballOne!,ballTwo!,ballThree!]
-        
         self.userScore = self.childNode(withName: "Score") as? SKLabelNode
         self.userScore?.text = "0"
         self.userScore?.position.y = self.frame.height / 2.5
@@ -89,10 +88,10 @@ class GameScene: SKScene {
         self.enemyGoal2?.position.y = self.frame.height / 2
         self.enemyGoal1x = Float ((self.enemyGoal1?.position.x)!)
         self.enemyGoal2x = Float ((self.enemyGoal2?.position.x)!)
-        self.enemyGoaly = Float ((self.player.position.y) * -1)
+        self.enemyGoaly = Float(self.player.position.y) * -1.1
         self.playerGoal1x = Float((self.playerGoal1?.position.x)!)
         self.playerGoal2x = Float((self.playerGoal2?.position.x)!)
-        self.playerGoaly = Float((self.player.position.y) - 20)
+        self.playerGoaly = Float(self.player.position.y) * 1.1
         self.addChild(again)
         self.addChild(endLabel)
         self.addChild(highScoreLabel)
@@ -107,16 +106,20 @@ class GameScene: SKScene {
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches{
+            
             if (self.gameOver){
+                self.onlineScore.isHidden = true
                 self.ballOne?.position = CGPoint(x: 0, y: 0)
                 self.ballTwo?.position = CGPoint(x: self.frame.width/4, y: 0)
                 self.ballThree?.position = CGPoint(x: -(self.frame.width/4), y: 0)
-
+                self.addChild(ballOne!)
+                self.addChild(ballTwo!)
+                self.addChild(ballThree!)
                 //self.inPlay = [ballOne!,ballTwo!,ballThree!]
                 
                 for i in self.inPlay{
                     i.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
-                    i.physicsBody?.applyImpulse(CGVector(dx: 20, dy: -20))
+                    i.physicsBody?.applyImpulse(CGVector(dx: 15, dy: -15))
                     i.isHidden = false
                 }
                 for i in self.children{
@@ -125,9 +128,8 @@ class GameScene: SKScene {
                 self.score = 0
                 self.endLabel.isHidden = true
                 self.again.isHidden = true
-                self.highScoreLabel.isHidden = true
                 self.gameOver = false
-                self.onlineScore.isHidden = true
+                self.highScoreLabel.isHidden = true
                 return
             }
             let location = touch.location(in: self)
@@ -137,9 +139,9 @@ class GameScene: SKScene {
                 for i in self.children{
                     i.isPaused = false
                 }
-                self.ballOne?.physicsBody?.applyImpulse(CGVector(dx: 20, dy: -20))
-                self.ballTwo?.physicsBody?.applyImpulse(CGVector(dx: 20, dy: -20))
-                self.ballThree?.physicsBody?.applyImpulse(CGVector(dx: 20, dy: -20))
+                self.ballOne?.physicsBody?.applyImpulse(CGVector(dx: 15, dy: -15))
+                self.ballTwo?.physicsBody?.applyImpulse(CGVector(dx: 15, dy: -15))
+                self.ballThree?.physicsBody?.applyImpulse(CGVector(dx: 15, dy: -15))
                 return
             }
             player.run(SKAction.moveTo(x: location.x, duration: 0.1))
@@ -164,18 +166,18 @@ class GameScene: SKScene {
             if (i.isHidden){
                 continue
             }
-            var ySpeed = -20
+            var ySpeed = -15
             let xCord = Float(i.position.x)
             let yCord = Float(i.position.y)
             if ((xCord > enemyGoal1x!) && (xCord < enemyGoal2x!) && (yCord > enemyGoaly!)){
                 score += 1
                 i.position = CGPoint(x: 0, y: 0)
                 i.physicsBody?.velocity = CGVector(dx: 0, dy: -1)
-                if (score < 30){
+                if (score < 20){
                     ySpeed += -score
                 }
                 else{
-                    ySpeed = -50
+                    ySpeed = -40
                 }
                 i.physicsBody?.velocity = (CGVector(dx: 0, dy: 0))
                 i.physicsBody?.applyImpulse(CGVector(dx: Int(arc4random_uniform(30)) - 15, dy: ySpeed))
@@ -199,13 +201,12 @@ class GameScene: SKScene {
             }
             else if ((xCord > playerGoal1x!) && (xCord < playerGoal2x!) && (yCord < playerGoaly!)){
                 i.isHidden = true
+                i.removeFromParent()
                 for j in self.inPlay{
                     if j.isHidden == false{
-                        self.bounce()
                         return
                     }
                 }
-                self.gameOver = true
                 self.playerGoal2?.position.x = self.frame.width / 4
                 self.playerGoal2?.position.y = -(self.frame.height / 2)
                 self.playerGoal1?.position.x = -(self.frame.width / 4)
@@ -220,24 +221,23 @@ class GameScene: SKScene {
                 self.playerGoal2x = Float((self.playerGoal2?.position.x)!)
                 self.playerGoaly = Float((self.player.position.y) - 20)
                 self.player.position.x = 0
+                
                 for i in self.children{
                     i.isPaused = true
                 }
                 var globalScore = 9999
                 let ref = Database.database().reference()
                 ref.observe(.value) { snapshot in
-                    let value = snapshot.value as? NSDictionary
-                    globalScore = Int(value!["Score"] as! Int)
-                    if (self.score > globalScore){
-                        ref.setValue(["Score": self.score])
-                        self.onlineScore.text = "Global HighScore " + String(self.score)
-                        
-                    }
-                    else{
-                        self.onlineScore.text = "Global HighScore " + String(globalScore)
-                    }
-                    self.onlineScore.isHidden = false
-                }
+                        let value = snapshot.value as? NSDictionary
+                        globalScore = Int(value!["Score"] as! Int)
+                        if (self.score > globalScore){
+                            ref.setValue(["Score": self.score])
+                            self.onlineScore.text = "Global HighScore " + String(self.score)
+                        }
+                        else{
+                            self.onlineScore.text = "Global HighScore " + String(globalScore)
+                        }
+            }
                
                 var highScore = 0
                 
@@ -263,30 +263,37 @@ class GameScene: SKScene {
                 //self.addChild(highScoreLabel!)
                 self.endLabel.isHidden = false
                 self.again.isHidden = false
+                self.onlineScore.text = "Downloading Scores"
+                self.onlineScore.isHidden = false
+                self.gameOver = true
             }
             else if((xCord < enemyGoal1x!) && (yCord > enemyGoaly!)){
-                //i.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
-                i.physicsBody?.applyImpulse(CGVector(dx: 5, dy: -(ySpeed/2)))
+                //i.physicsBody?.velocity.dy = 0
+              //  i.position.y = CGFloat(enemyGoaly! * 0.8)
+                i.physicsBody?.applyImpulse(CGVector(dx: 5, dy: ySpeed))
             }
             else if((xCord > enemyGoal2x!) && (yCord > enemyGoaly!)){
-                //i.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
-                i.physicsBody?.applyImpulse(CGVector(dx: -5, dy: -(ySpeed/2)))
+                //i.physicsBody?.velocity.dy = 0
+                //i.position.y = CGFloat(enemyGoaly! * 0.8)
+                i.physicsBody?.applyImpulse(CGVector(dx: -5, dy: ySpeed))
             }
             else if ((xCord < playerGoal1x!) && (yCord < playerGoaly!) ){
-                //i.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
-                i.physicsBody?.applyImpulse(CGVector(dx: 5, dy:(ySpeed/2)))
+               //i.physicsBody?.velocity.dy = 0
+                //i.position.y = CGFloat(playerGoaly! * 0.8)
+                i.physicsBody?.applyImpulse(CGVector(dx: 5, dy: -ySpeed))
             }
             else if ((xCord > playerGoal2x!) && (yCord < playerGoaly!)){
-                //i.physicsBody?.velocity = CGVector(dx: -5, dy: 10)
-                i.physicsBody?.applyImpulse(CGVector(dx: -5, dy: ySpeed/2))
+                //i.physicsBody?.velocity.dy = 0
+                //i.position.y = CGFloat(playerGoaly! * 0.8)
+                i.physicsBody?.applyImpulse(CGVector(dx: -5, dy: -ySpeed ))
+            }
+            else if abs((Int((i.physicsBody?.velocity.dy)!))) < 2{
+                    i.physicsBody?.velocity.dy = (i.physicsBody?.velocity.dy)! * 2
+                
             }
         }
         self.userScore?.text = String(score)
                 // Called before each frame is rendered
     }
-    func bounce(){
-        for i in self.inPlay{
-            i.physicsBody?.applyImpulse(CGVector(dx: 0, dy: -0.05))
-        }
-    }
+    
 }
