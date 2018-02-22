@@ -11,7 +11,16 @@ import SpriteKit
 import GameplayKit
 
 class GameViewController: UIViewController {
-
+    override func viewWillAppear(_ animated: Bool) {
+        UIApplication.shared.isStatusBarHidden = true
+    }
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    override func prefersHomeIndicatorAutoHidden() -> Bool
+    {
+        return true
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -48,7 +57,5 @@ class GameViewController: UIViewController {
         // Release any cached data, images, etc that aren't in use.
     }
 
-    override var prefersStatusBarHidden: Bool {
-        return true
-    }
+    
 }
