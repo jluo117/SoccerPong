@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		43219C4E310D63F8BE7A5E61 /* Pods_SoccerPong.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AD791B23A3CE6C75ABC9830 /* Pods_SoccerPong.framework */; };
-		791908B8201FF341009B4510 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 791908B7201FF341009B4510 /* GoogleService-Info.plist */; };
+		01B2591688E3E54EB431D1D0 /* libPods-SoccerPongTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 875C4CACBF394CB3A9B92368 /* libPods-SoccerPongTests.a */; };
+		595C5A261E65E202C8B5CAC7 /* libPods-SoccerPongUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B70940312E81795164418F5 /* libPods-SoccerPongUITests.a */; };
+		7903794720D96790006D60D2 /* singlePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7903794620D96790006D60D2 /* singlePlayer.swift */; };
+		7903794920D96D83006D60D2 /* multiplayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7903794820D96D83006D60D2 /* multiplayer.swift */; };
+		791D42C1209238D6004A8275 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 791D42C0209238D5004A8275 /* GoogleService-Info.plist */; };
+		791D42C320923AF8004A8275 /* playerSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791D42C220923AF8004A8275 /* playerSelection.swift */; };
 		795C2CD81FFC216300D19BA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795C2CD71FFC216300D19BA9 /* AppDelegate.swift */; };
 		795C2CDA1FFC216300D19BA9 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 795C2CD91FFC216300D19BA9 /* GameScene.sks */; };
 		795C2CDC1FFC216300D19BA9 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 795C2CDB1FFC216300D19BA9 /* Actions.sks */; };
@@ -22,8 +26,9 @@
 		795C2D0C1FFC234700D19BA9 /* Ball.png in Resources */ = {isa = PBXBuildFile; fileRef = 795C2D0B1FFC234700D19BA9 /* Ball.png */; };
 		798CD93E200F1DF6008290B4 /* menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798CD93D200F1DF6008290B4 /* menu.swift */; };
 		79BE0FA42034EEF4008FCC2F /* ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BE0FA32034EEF4008FCC2F /* ball.swift */; };
-		A5B3EE4119FEA6C8D0ED7E9F /* Pods_SoccerPongUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D1879DBE720FE292C5FCBA9 /* Pods_SoccerPongUITests.framework */; };
-		C862827628A07881F318BF63 /* Pods_SoccerPongTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CD81867AF377B4363AEF1E6 /* Pods_SoccerPongTests.framework */; };
+		79D98E8B20D840EF004432D3 /* player_2.sks in Resources */ = {isa = PBXBuildFile; fileRef = 79D98E8A20D840EF004432D3 /* player_2.sks */; };
+		79D98E8D20D85979004432D3 /* soccerPong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D98E8C20D85979004432D3 /* soccerPong.swift */; };
+		A8FF20CD2E4C8435A515DC5D /* libPods-SoccerPong.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC45EFC8B3B57B12F63459D5 /* libPods-SoccerPong.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,10 +51,12 @@
 /* Begin PBXFileReference section */
 		05428D5F5355287AE432C794 /* Pods-SoccerPong.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoccerPong.release.xcconfig"; path = "Pods/Target Support Files/Pods-SoccerPong/Pods-SoccerPong.release.xcconfig"; sourceTree = "<group>"; };
 		1F92EA2A373B1CB20952D9A8 /* Pods-SoccerPongTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoccerPongTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SoccerPongTests/Pods-SoccerPongTests.debug.xcconfig"; sourceTree = "<group>"; };
-		2AD791B23A3CE6C75ABC9830 /* Pods_SoccerPong.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoccerPong.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2CD81867AF377B4363AEF1E6 /* Pods_SoccerPongTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoccerPongTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B70940312E81795164418F5 /* libPods-SoccerPongUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SoccerPongUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EE85E170A80E6E8F319F4FB /* Pods-SoccerPongTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoccerPongTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SoccerPongTests/Pods-SoccerPongTests.release.xcconfig"; sourceTree = "<group>"; };
-		791908B7201FF341009B4510 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7903794620D96790006D60D2 /* singlePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = singlePlayer.swift; sourceTree = "<group>"; };
+		7903794820D96D83006D60D2 /* multiplayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = multiplayer.swift; sourceTree = "<group>"; };
+		791D42C0209238D5004A8275 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		791D42C220923AF8004A8275 /* playerSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = playerSelection.swift; sourceTree = "<group>"; };
 		795C2CD41FFC216300D19BA9 /* SoccerPong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoccerPong.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		795C2CD71FFC216300D19BA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		795C2CD91FFC216300D19BA9 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -69,10 +76,13 @@
 		795C2D0B1FFC234700D19BA9 /* Ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Ball.png; path = Assets.xcassets/Ball.png; sourceTree = "<group>"; };
 		798CD93D200F1DF6008290B4 /* menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = menu.swift; sourceTree = "<group>"; };
 		79BE0FA32034EEF4008FCC2F /* ball.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ball.swift; sourceTree = "<group>"; };
-		9D1879DBE720FE292C5FCBA9 /* Pods_SoccerPongUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoccerPongUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		79D98E8A20D840EF004432D3 /* player_2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = player_2.sks; sourceTree = "<group>"; };
+		79D98E8C20D85979004432D3 /* soccerPong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = soccerPong.swift; sourceTree = "<group>"; };
+		875C4CACBF394CB3A9B92368 /* libPods-SoccerPongTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SoccerPongTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF6188835F943A0F22FD2E3C /* Pods-SoccerPongUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoccerPongUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SoccerPongUITests/Pods-SoccerPongUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DD13CA35522D18A6112AE50A /* Pods-SoccerPong.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoccerPong.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SoccerPong/Pods-SoccerPong.debug.xcconfig"; sourceTree = "<group>"; };
 		E2308F32377B8EC3B4D75FF8 /* Pods-SoccerPongUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoccerPongUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SoccerPongUITests/Pods-SoccerPongUITests.release.xcconfig"; sourceTree = "<group>"; };
+		EC45EFC8B3B57B12F63459D5 /* libPods-SoccerPong.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SoccerPong.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43219C4E310D63F8BE7A5E61 /* Pods_SoccerPong.framework in Frameworks */,
+				A8FF20CD2E4C8435A515DC5D /* libPods-SoccerPong.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,7 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C862827628A07881F318BF63 /* Pods_SoccerPongTests.framework in Frameworks */,
+				01B2591688E3E54EB431D1D0 /* libPods-SoccerPongTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,7 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5B3EE4119FEA6C8D0ED7E9F /* Pods_SoccerPongUITests.framework in Frameworks */,
+				595C5A261E65E202C8B5CAC7 /* libPods-SoccerPongUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,19 +138,24 @@
 		795C2CD61FFC216300D19BA9 /* SoccerPong */ = {
 			isa = PBXGroup;
 			children = (
+				791D42C0209238D5004A8275 /* GoogleService-Info.plist */,
 				795C2CD71FFC216300D19BA9 /* AppDelegate.swift */,
 				795C2CD91FFC216300D19BA9 /* GameScene.sks */,
 				798CD93D200F1DF6008290B4 /* menu.swift */,
 				795C2CDB1FFC216300D19BA9 /* Actions.sks */,
 				795C2CDD1FFC216300D19BA9 /* GameScene.swift */,
+				7903794620D96790006D60D2 /* singlePlayer.swift */,
+				79D98E8C20D85979004432D3 /* soccerPong.swift */,
+				7903794820D96D83006D60D2 /* multiplayer.swift */,
 				79BE0FA32034EEF4008FCC2F /* ball.swift */,
-				791908B7201FF341009B4510 /* GoogleService-Info.plist */,
 				795C2CDF1FFC216300D19BA9 /* GameViewController.swift */,
+				79D98E8A20D840EF004432D3 /* player_2.sks */,
 				795C2CE11FFC216300D19BA9 /* Main.storyboard */,
 				795C2CE41FFC216300D19BA9 /* Assets.xcassets */,
 				795C2D0B1FFC234700D19BA9 /* Ball.png */,
 				795C2CE61FFC216300D19BA9 /* LaunchScreen.storyboard */,
 				795C2CE91FFC216300D19BA9 /* Info.plist */,
+				791D42C220923AF8004A8275 /* playerSelection.swift */,
 			);
 			path = SoccerPong;
 			sourceTree = "<group>";
@@ -179,9 +194,9 @@
 		FA0D8E477D29C77CB47C71B3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2AD791B23A3CE6C75ABC9830 /* Pods_SoccerPong.framework */,
-				2CD81867AF377B4363AEF1E6 /* Pods_SoccerPongTests.framework */,
-				9D1879DBE720FE292C5FCBA9 /* Pods_SoccerPongUITests.framework */,
+				EC45EFC8B3B57B12F63459D5 /* libPods-SoccerPong.a */,
+				875C4CACBF394CB3A9B92368 /* libPods-SoccerPongTests.a */,
+				4B70940312E81795164418F5 /* libPods-SoccerPongUITests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -197,8 +212,6 @@
 				795C2CD01FFC216300D19BA9 /* Sources */,
 				795C2CD11FFC216300D19BA9 /* Frameworks */,
 				795C2CD21FFC216300D19BA9 /* Resources */,
-				D2CB1D3F5122B01D517A83A8 /* [CP] Embed Pods Frameworks */,
-				1BDA56AE1FFA485A3B6205F0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -217,8 +230,6 @@
 				795C2CEA1FFC216300D19BA9 /* Sources */,
 				795C2CEB1FFC216300D19BA9 /* Frameworks */,
 				795C2CEC1FFC216300D19BA9 /* Resources */,
-				C1870B2B2A42CDD56C0E31C2 /* [CP] Embed Pods Frameworks */,
-				E9E75BBE663C00D1D525BB3B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -238,8 +249,6 @@
 				795C2CF51FFC216300D19BA9 /* Sources */,
 				795C2CF61FFC216300D19BA9 /* Frameworks */,
 				795C2CF71FFC216300D19BA9 /* Resources */,
-				1BAFCA2246389BBF21B62125 /* [CP] Embed Pods Frameworks */,
-				54E33D157B4FEFAF49AFE0FB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -258,7 +267,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "james luo";
 				TargetAttributes = {
 					795C2CD31FFC216300D19BA9 = {
@@ -308,12 +317,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				795C2D0C1FFC234700D19BA9 /* Ball.png in Resources */,
+				79D98E8B20D840EF004432D3 /* player_2.sks in Resources */,
 				795C2CE31FFC216300D19BA9 /* Main.storyboard in Resources */,
 				795C2CDA1FFC216300D19BA9 /* GameScene.sks in Resources */,
 				795C2CE51FFC216300D19BA9 /* Assets.xcassets in Resources */,
 				795C2CE81FFC216300D19BA9 /* LaunchScreen.storyboard in Resources */,
 				795C2CDC1FFC216300D19BA9 /* Actions.sks in Resources */,
-				791908B8201FF341009B4510 /* GoogleService-Info.plist in Resources */,
+				791D42C1209238D6004A8275 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,36 +344,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1BAFCA2246389BBF21B62125 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SoccerPongUITests/Pods-SoccerPongUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		1BDA56AE1FFA485A3B6205F0 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SoccerPong/Pods-SoccerPong-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		1EC3E73B4694A087559D691C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -418,73 +398,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		54E33D157B4FEFAF49AFE0FB /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SoccerPongUITests/Pods-SoccerPongUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C1870B2B2A42CDD56C0E31C2 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SoccerPongTests/Pods-SoccerPongTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D2CB1D3F5122B01D517A83A8 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-SoccerPong/Pods-SoccerPong-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SoccerPong/Pods-SoccerPong-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E9E75BBE663C00D1D525BB3B /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SoccerPongTests/Pods-SoccerPongTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -492,8 +405,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79D98E8D20D85979004432D3 /* soccerPong.swift in Sources */,
+				7903794920D96D83006D60D2 /* multiplayer.swift in Sources */,
 				795C2CDE1FFC216300D19BA9 /* GameScene.swift in Sources */,
+				791D42C320923AF8004A8275 /* playerSelection.swift in Sources */,
 				795C2CE01FFC216300D19BA9 /* GameViewController.swift in Sources */,
+				7903794720D96790006D60D2 /* singlePlayer.swift in Sources */,
 				798CD93E200F1DF6008290B4 /* menu.swift in Sources */,
 				795C2CD81FFC216300D19BA9 /* AppDelegate.swift in Sources */,
 				79BE0FA42034EEF4008FCC2F /* ball.swift in Sources */,
@@ -565,6 +482,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -572,6 +490,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -604,7 +523,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Debug;
 		};
@@ -622,6 +541,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -629,6 +549,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -652,8 +573,10 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
