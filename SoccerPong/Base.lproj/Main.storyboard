@@ -170,7 +170,6 @@
                                 </constraints>
                                 <state key="normal" title="2 Player"/>
                                 <connections>
-                                    <action selector="multiplayer:" destination="jPn-96-Rwa" eventType="touchUpInside" id="H4C-OM-fv5"/>
                                     <segue destination="s75-aH-1DK" kind="show" id="xaH-Px-IU8"/>
                                 </connections>
                             </button>
@@ -181,7 +180,6 @@
                                 </constraints>
                                 <state key="normal" title="1 Player"/>
                                 <connections>
-                                    <action selector="singlePlayer:" destination="jPn-96-Rwa" eventType="touchUpInside" id="U4r-0A-6Cm"/>
                                     <segue destination="BV1-FR-VrT" kind="show" id="fZR-NU-mBq"/>
                                 </connections>
                             </button>
@@ -207,10 +205,10 @@
             </objects>
             <point key="canvasLocation" x="446.25" y="61.25"/>
         </scene>
-        <!--Game View Controller-->
+        <!--Solo Play Launcher-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModule="SoccerPong" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BV1-FR-VrT" customClass="soloPlayLauncher" customModule="SoccerPong" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -222,10 +220,10 @@
             </objects>
             <point key="canvasLocation" x="1716" y="-569"/>
         </scene>
-        <!--Game View Controller-->
+        <!--Multi Play Launcher-->
         <scene sceneID="IIg-7H-d2j">
             <objects>
-                <viewController id="s75-aH-1DK" customClass="GameViewController" customModule="SoccerPong" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="s75-aH-1DK" customClass="multiPlayLauncher" customModule="SoccerPong" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="20T-W2-wja" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

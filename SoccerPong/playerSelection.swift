@@ -21,15 +21,7 @@ class playerSelection: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func singlePlayer(_ sender: UIButton) {
-        multiPlayer = false
-        self.performSegue(withIdentifier: "startGame", sender: self)
-    }
-    
-    @IBAction func multiplayer(_ sender: UIButton) {
-        multiPlayer = true
-        self.performSegue(withIdentifier: "startGame", sender: self)
-    }
+   
     /*
     // MARK: - Navigation
 

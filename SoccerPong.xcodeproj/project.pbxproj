@@ -14,10 +14,10 @@
 		791D42C1209238D6004A8275 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 791D42C0209238D5004A8275 /* GoogleService-Info.plist */; };
 		791D42C320923AF8004A8275 /* playerSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791D42C220923AF8004A8275 /* playerSelection.swift */; };
 		795C2CD81FFC216300D19BA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795C2CD71FFC216300D19BA9 /* AppDelegate.swift */; };
-		795C2CDA1FFC216300D19BA9 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 795C2CD91FFC216300D19BA9 /* GameScene.sks */; };
+		795C2CDA1FFC216300D19BA9 /* soloPlay.sks in Resources */ = {isa = PBXBuildFile; fileRef = 795C2CD91FFC216300D19BA9 /* soloPlay.sks */; };
 		795C2CDC1FFC216300D19BA9 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 795C2CDB1FFC216300D19BA9 /* Actions.sks */; };
-		795C2CDE1FFC216300D19BA9 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795C2CDD1FFC216300D19BA9 /* GameScene.swift */; };
-		795C2CE01FFC216300D19BA9 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795C2CDF1FFC216300D19BA9 /* GameViewController.swift */; };
+		795C2CDE1FFC216300D19BA9 /* soloPlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795C2CDD1FFC216300D19BA9 /* soloPlay.swift */; };
+		795C2CE01FFC216300D19BA9 /* soloPlayLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795C2CDF1FFC216300D19BA9 /* soloPlayLauncher.swift */; };
 		795C2CE31FFC216300D19BA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 795C2CE11FFC216300D19BA9 /* Main.storyboard */; };
 		795C2CE51FFC216300D19BA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 795C2CE41FFC216300D19BA9 /* Assets.xcassets */; };
 		795C2CE81FFC216300D19BA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 795C2CE61FFC216300D19BA9 /* LaunchScreen.storyboard */; };
@@ -25,8 +25,10 @@
 		795C2CFE1FFC216300D19BA9 /* PongUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795C2CFD1FFC216300D19BA9 /* PongUITests.swift */; };
 		795C2D0C1FFC234700D19BA9 /* Ball.png in Resources */ = {isa = PBXBuildFile; fileRef = 795C2D0B1FFC234700D19BA9 /* Ball.png */; };
 		798CD93E200F1DF6008290B4 /* menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798CD93D200F1DF6008290B4 /* menu.swift */; };
+		79BB739A20DAB6F300AFAA49 /* multiPlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BB739920DAB6F300AFAA49 /* multiPlay.swift */; };
+		79BB739C20DAB8B100AFAA49 /* multiPlayer.sks in Resources */ = {isa = PBXBuildFile; fileRef = 79BB739B20DAB8B100AFAA49 /* multiPlayer.sks */; };
+		79BB739E20DABB0100AFAA49 /* multiPlayLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BB739D20DABB0100AFAA49 /* multiPlayLauncher.swift */; };
 		79BE0FA42034EEF4008FCC2F /* ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BE0FA32034EEF4008FCC2F /* ball.swift */; };
-		79D98E8B20D840EF004432D3 /* player_2.sks in Resources */ = {isa = PBXBuildFile; fileRef = 79D98E8A20D840EF004432D3 /* player_2.sks */; };
 		79D98E8D20D85979004432D3 /* soccerPong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D98E8C20D85979004432D3 /* soccerPong.swift */; };
 		A8FF20CD2E4C8435A515DC5D /* libPods-SoccerPong.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC45EFC8B3B57B12F63459D5 /* libPods-SoccerPong.a */; };
 /* End PBXBuildFile section */
@@ -59,10 +61,10 @@
 		791D42C220923AF8004A8275 /* playerSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = playerSelection.swift; sourceTree = "<group>"; };
 		795C2CD41FFC216300D19BA9 /* SoccerPong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoccerPong.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		795C2CD71FFC216300D19BA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		795C2CD91FFC216300D19BA9 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		795C2CD91FFC216300D19BA9 /* soloPlay.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = soloPlay.sks; sourceTree = "<group>"; };
 		795C2CDB1FFC216300D19BA9 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
-		795C2CDD1FFC216300D19BA9 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
-		795C2CDF1FFC216300D19BA9 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		795C2CDD1FFC216300D19BA9 /* soloPlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = soloPlay.swift; sourceTree = "<group>"; };
+		795C2CDF1FFC216300D19BA9 /* soloPlayLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = soloPlayLauncher.swift; sourceTree = "<group>"; };
 		795C2CE21FFC216300D19BA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		795C2CE41FFC216300D19BA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		795C2CE71FFC216300D19BA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -75,8 +77,10 @@
 		795C2CFF1FFC216300D19BA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		795C2D0B1FFC234700D19BA9 /* Ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Ball.png; path = Assets.xcassets/Ball.png; sourceTree = "<group>"; };
 		798CD93D200F1DF6008290B4 /* menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = menu.swift; sourceTree = "<group>"; };
+		79BB739920DAB6F300AFAA49 /* multiPlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = multiPlay.swift; sourceTree = "<group>"; };
+		79BB739B20DAB8B100AFAA49 /* multiPlayer.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = multiPlayer.sks; sourceTree = "<group>"; };
+		79BB739D20DABB0100AFAA49 /* multiPlayLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = multiPlayLauncher.swift; sourceTree = "<group>"; };
 		79BE0FA32034EEF4008FCC2F /* ball.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ball.swift; sourceTree = "<group>"; };
-		79D98E8A20D840EF004432D3 /* player_2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = player_2.sks; sourceTree = "<group>"; };
 		79D98E8C20D85979004432D3 /* soccerPong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = soccerPong.swift; sourceTree = "<group>"; };
 		875C4CACBF394CB3A9B92368 /* libPods-SoccerPongTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SoccerPongTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF6188835F943A0F22FD2E3C /* Pods-SoccerPongUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoccerPongUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SoccerPongUITests/Pods-SoccerPongUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -140,16 +144,18 @@
 			children = (
 				791D42C0209238D5004A8275 /* GoogleService-Info.plist */,
 				795C2CD71FFC216300D19BA9 /* AppDelegate.swift */,
-				795C2CD91FFC216300D19BA9 /* GameScene.sks */,
+				795C2CD91FFC216300D19BA9 /* soloPlay.sks */,
+				79BB739B20DAB8B100AFAA49 /* multiPlayer.sks */,
 				798CD93D200F1DF6008290B4 /* menu.swift */,
 				795C2CDB1FFC216300D19BA9 /* Actions.sks */,
-				795C2CDD1FFC216300D19BA9 /* GameScene.swift */,
+				795C2CDD1FFC216300D19BA9 /* soloPlay.swift */,
+				79BB739920DAB6F300AFAA49 /* multiPlay.swift */,
 				7903794620D96790006D60D2 /* singlePlayer.swift */,
 				79D98E8C20D85979004432D3 /* soccerPong.swift */,
 				7903794820D96D83006D60D2 /* multiplayer.swift */,
 				79BE0FA32034EEF4008FCC2F /* ball.swift */,
-				795C2CDF1FFC216300D19BA9 /* GameViewController.swift */,
-				79D98E8A20D840EF004432D3 /* player_2.sks */,
+				795C2CDF1FFC216300D19BA9 /* soloPlayLauncher.swift */,
+				79BB739D20DABB0100AFAA49 /* multiPlayLauncher.swift */,
 				795C2CE11FFC216300D19BA9 /* Main.storyboard */,
 				795C2CE41FFC216300D19BA9 /* Assets.xcassets */,
 				795C2D0B1FFC234700D19BA9 /* Ball.png */,
@@ -317,10 +323,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				795C2D0C1FFC234700D19BA9 /* Ball.png in Resources */,
-				79D98E8B20D840EF004432D3 /* player_2.sks in Resources */,
 				795C2CE31FFC216300D19BA9 /* Main.storyboard in Resources */,
-				795C2CDA1FFC216300D19BA9 /* GameScene.sks in Resources */,
+				795C2CDA1FFC216300D19BA9 /* soloPlay.sks in Resources */,
 				795C2CE51FFC216300D19BA9 /* Assets.xcassets in Resources */,
+				79BB739C20DAB8B100AFAA49 /* multiPlayer.sks in Resources */,
 				795C2CE81FFC216300D19BA9 /* LaunchScreen.storyboard in Resources */,
 				795C2CDC1FFC216300D19BA9 /* Actions.sks in Resources */,
 				791D42C1209238D6004A8275 /* GoogleService-Info.plist in Resources */,
@@ -407,11 +413,13 @@
 			files = (
 				79D98E8D20D85979004432D3 /* soccerPong.swift in Sources */,
 				7903794920D96D83006D60D2 /* multiplayer.swift in Sources */,
-				795C2CDE1FFC216300D19BA9 /* GameScene.swift in Sources */,
+				79BB739E20DABB0100AFAA49 /* multiPlayLauncher.swift in Sources */,
+				795C2CDE1FFC216300D19BA9 /* soloPlay.swift in Sources */,
 				791D42C320923AF8004A8275 /* playerSelection.swift in Sources */,
-				795C2CE01FFC216300D19BA9 /* GameViewController.swift in Sources */,
+				795C2CE01FFC216300D19BA9 /* soloPlayLauncher.swift in Sources */,
 				7903794720D96790006D60D2 /* singlePlayer.swift in Sources */,
 				798CD93E200F1DF6008290B4 /* menu.swift in Sources */,
+				79BB739A20DAB6F300AFAA49 /* multiPlay.swift in Sources */,
 				795C2CD81FFC216300D19BA9 /* AppDelegate.swift in Sources */,
 				79BE0FA42034EEF4008FCC2F /* ball.swift in Sources */,
 			);

@@ -10,7 +10,7 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
-class GameViewController: UIViewController {
+class soloPlayLauncher: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         UIApplication.shared.isStatusBarHidden = true
     }
@@ -26,7 +26,7 @@ class GameViewController: UIViewController {
         
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
-            if let scene = SKScene(fileNamed: "GameScene") {
+            if let scene = SKScene(fileNamed: "soloPlay") {
                 // Set the scale mode to scale to fit the window
                 scene.scaleMode = .aspectFill
                 scene.size = view.bounds.size
