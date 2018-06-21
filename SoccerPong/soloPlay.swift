@@ -179,7 +179,7 @@ class soloPlay: SKScene {
             self.user2Score?.text = "0"
             self.user2Score?.position.y = self.frame.height / 2.5
             self.user2Score?.position.x = -(self.frame.width / 2.7)
-            self.user2Score?.zRotation = CGFloat(.pi/2.0)
+            self.user2Score?.zRotation = CGFloat(.pi/1.0)
             self.userScore?.position.y = -self.frame.height / 2.5
             self.userScore?.position.x = -(self.frame.width / 2.7)
             player.position.y = -(self.frame.height / 2) + (self.frame.height/9) + 5
