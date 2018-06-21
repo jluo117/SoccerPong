@@ -1,18 +1,22 @@
 //
-//  GameViewController.swift
-//  Pong
+//  multiLauncher.swift
+//  SoccerPong
 //
-//  Created by james luo on 1/2/18.
+//  Created by james luo on 6/20/18.
 //  Copyright © 2018 james luo. All rights reserved.
 //
+
 
 import UIKit
 import SpriteKit
 import GameplayKit
-
-class GameViewController: UIViewController {
+var IsmutiPlayer = false
+class gameSelector: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         UIApplication.shared.isStatusBarHidden = true
+    }
+    @IBAction func singlePlayer(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "launcher", sender: self)
     }
     override var prefersStatusBarHidden: Bool {
         return true
@@ -23,27 +27,12 @@ class GameViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if let view = self.view as! SKView? {
-            // Load the SKScene from 'GameScene.sks'
-            if let scene = SKScene(fileNamed: "GameScene") {
-                // Set the scale mode to scale to fit the window
-                scene.scaleMode = .aspectFill
-                scene.size = view.bounds.size
-                // Present the scene
-                view.presentScene(scene)
-            }
-            
-            view.ignoresSiblingOrder = true
-            
-           
-        }
     }
-
+    
     override var shouldAutorotate: Bool {
         return true
     }
-
+    
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         if UIDevice.current.userInterfaceIdiom == .phone {
             return .allButUpsideDown
@@ -51,11 +40,17 @@ class GameViewController: UIViewController {
             return .all
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Release any cached data, images, etc that aren't in use.
     }
-
     
+    
+    @IBAction func multiPlayer(_ sender: UIButton) {
+        IsmutiPlayer = true
+        self.performSegue(withIdentifier: "launcher", sender: self)
+    }
 }
+
+
