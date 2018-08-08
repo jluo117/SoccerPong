@@ -9,6 +9,7 @@
 import SpriteKit
 import GameplayKit
 import Firebase
+import AVFoundation
 class soloPlay: SKScene {
     var remainingBalls = 0
     var player = SKSpriteNode()
@@ -44,7 +45,9 @@ class soloPlay: SKScene {
     var timer = Timer()
     var gameStart = false
     override func didMove(to view: SKView) {
-        //self.removeAllChildren()
+        let sound:SKAction = SKAction.playSoundFileNamed("gamemusic.mp3", waitForCompletion: true)
+        let loopSound:SKAction = SKAction.repeatForever(sound)
+        self.run(loopSound)
         if (!IsmutiPlayer){
         StartLabel.position = CGPoint(x: 0, y: self.frame.height/8)
         self.StartLabel.fontSize = self.frame.width / 8
@@ -545,6 +548,17 @@ class soloPlay: SKScene {
         if (score >= 15){
             gameOver = true
             endLabel.text = "Player 1 Wins"
+            endLabel.isHidden = false
+            endLabel.position = CGPoint(x: 0, y: self.frame.height / 8)
+            again.isHidden = false
+            again.position = CGPoint(x: 0, y: -self.frame.height / 8)
+            for i in inPlay{
+                i.nodeID.isHidden = true
+            }
+        }
+        else if (score2 >= 15){
+            gameOver = true
+            endLabel.text = "Player 2 Wins"
             endLabel.isHidden = false
             endLabel.position = CGPoint(x: 0, y: self.frame.height / 8)
             again.isHidden = false
