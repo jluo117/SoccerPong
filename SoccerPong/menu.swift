@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GameKit
 class menu: UIViewController {
 
     
@@ -14,6 +15,7 @@ class menu: UIViewController {
     @IBOutlet weak var Menu: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.authPlayer()
        // Menu.frame = CGRect(x: UIScreen.main.bounds.width / 3.5, y: 0, width: UIScreen.main.bounds.width / 4, height: UIScreen.main.bounds.width / 4)
         // Do any additional setup after loading the view.
     }
@@ -27,6 +29,27 @@ class menu: UIViewController {
         let highScore = 0
         UserDefaults.standard.set(highScore, forKey: "highScore")
     }
+    func authPlayer(){
+        let localPlayer = GKLocalPlayer.localPlayer()
+        
+        localPlayer.authenticateHandler = {
+            (view, error) in
+            
+            if view != nil {
+                
+                self.present(view!, animated: true, completion: nil)
+                
+            }
+            else {
+                
+                print(GKLocalPlayer.localPlayer().isAuthenticated)
+                
+            }
+            
+            
+        }
+    }
+
     
     /*
     // MARK: - Navigation
