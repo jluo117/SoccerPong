@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QAQ-Lh-P8H">
-    <device id="retina3_5" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QAQ-Lh-P8H">
+    <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,128 +15,42 @@
             <objects>
                 <viewController storyboardIdentifier="Menu" title="Menu" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QAQ-Lh-P8H" customClass="menu" customModule="SoccerPong" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bRk-Pn-UDb">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SoccerPong" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clj-3j-V5c">
-                                <rect key="frame" x="0.0" y="191" width="320" height="74"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="74" id="o2Z-m5-2Ga"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="SoccerPong" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clj-3j-V5c">
+                                <rect key="frame" x="0.0" y="188" width="414" height="490"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="o2Z-m5-2Ga"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="o2Z-m5-2Ga"/>
-                                    </mask>
-                                </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lMG-hh-mHM">
-                                <rect key="frame" x="109" y="408" width="103" height="76"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="76" id="raZ-yC-udd"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
-                                <state key="normal" title="Clear"/>
-                                <connections>
-                                    <action selector="Clear:" destination="QAQ-Lh-P8H" eventType="touchUpInside" id="JLb-rt-8Qt"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zjO-jR-f8q">
-                                <rect key="frame" x="122.5" y="298" width="76" height="63"/>
+                                <rect key="frame" x="169" y="81" width="76" height="63"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="42"/>
                                 <state key="normal" title="Play"/>
                                 <connections>
                                     <segue destination="Oax-H6-8ek" kind="show" id="6CB-eZ-CAd"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lMG-hh-mHM">
+                                <rect key="frame" x="170" y="634" width="114" height="281"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <state key="normal" title="Clear"/>
+                                <connections>
+                                    <action selector="Clear:" destination="QAQ-Lh-P8H" eventType="touchUpInside" id="JLb-rt-8Qt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="clj-3j-V5c" firstAttribute="leading" secondItem="juo-0J-oP5" secondAttribute="leading" constant="363" id="B2k-Gk-V6t">
-                                <variation key="heightClass=regular-widthClass=regular" constant="213"/>
-                            </constraint>
-                            <constraint firstItem="zjO-jR-f8q" firstAttribute="centerY" secondItem="bRk-Pn-UDb" secondAttribute="centerY" id="BbR-fp-EkK">
-                                <variation key="heightClass=regular-widthClass=regular" constant="40.5"/>
-                            </constraint>
-                            <constraint firstItem="clj-3j-V5c" firstAttribute="centerX" secondItem="bRk-Pn-UDb" secondAttribute="centerX" id="C0A-pn-yyE"/>
-                            <constraint firstItem="lMG-hh-mHM" firstAttribute="leading" secondItem="juo-0J-oP5" secondAttribute="leading" constant="109" id="Ci9-80-SIX"/>
-                            <constraint firstItem="lMG-hh-mHM" firstAttribute="top" secondItem="zjO-jR-f8q" secondAttribute="bottom" constant="47" id="DtP-Iq-GUX"/>
-                            <constraint firstItem="juo-0J-oP5" firstAttribute="bottom" secondItem="zjO-jR-f8q" secondAttribute="bottom" constant="646" id="KDl-fw-INA">
-                                <variation key="heightClass=regular-widthClass=regular" constant="373"/>
-                            </constraint>
-                            <constraint firstItem="clj-3j-V5c" firstAttribute="top" secondItem="juo-0J-oP5" secondAttribute="top" constant="465" id="Qdn-ur-03e">
-                                <variation key="widthClass=regular" constant="511"/>
-                                <variation key="heightClass=regular-widthClass=regular" constant="315"/>
-                            </constraint>
-                            <constraint firstItem="clj-3j-V5c" firstAttribute="centerX" secondItem="zjO-jR-f8q" secondAttribute="centerX" id="Un8-Hh-Rp4"/>
-                            <constraint firstItem="clj-3j-V5c" firstAttribute="leading" secondItem="juo-0J-oP5" secondAttribute="leading" constant="111" id="VTe-3W-lTC">
-                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
-                            </constraint>
-                            <constraint firstItem="zjO-jR-f8q" firstAttribute="top" secondItem="clj-3j-V5c" secondAttribute="bottom" constant="75" id="eVm-ZL-xWD">
-                                <variation key="widthClass=regular" constant="29"/>
-                                <variation key="heightClass=regular-widthClass=regular" constant="91"/>
-                            </constraint>
-                            <constraint firstItem="clj-3j-V5c" firstAttribute="centerX" secondItem="bRk-Pn-UDb" secondAttribute="centerX" id="gPN-n4-UN1">
-                                <variation key="heightClass=regular-widthClass=regular" constant="-33"/>
-                            </constraint>
-                            <constraint firstItem="lMG-hh-mHM" firstAttribute="centerX" secondItem="zjO-jR-f8q" secondAttribute="centerX" id="hRP-x4-1dR"/>
-                            <constraint firstItem="zjO-jR-f8q" firstAttribute="top" secondItem="clj-3j-V5c" secondAttribute="bottom" constant="17" id="kTa-M5-8m5">
-                                <variation key="heightClass=regular-widthClass=compact" constant="33"/>
-                            </constraint>
-                            <constraint firstItem="clj-3j-V5c" firstAttribute="top" secondItem="juo-0J-oP5" secondAttribute="top" constant="226" id="lFK-5p-M3e">
-                                <variation key="heightClass=regular-widthClass=compact" constant="171"/>
-                            </constraint>
-                            <constraint firstItem="zjO-jR-f8q" firstAttribute="leading" secondItem="juo-0J-oP5" secondAttribute="leading" constant="442" id="uwM-JY-Xv7">
-                                <variation key="heightClass=regular-widthClass=regular" constant="237"/>
-                            </constraint>
-                            <constraint firstItem="clj-3j-V5c" firstAttribute="centerX" secondItem="zjO-jR-f8q" secondAttribute="centerX" id="vjZ-AI-I7p"/>
+                            <constraint firstItem="zjO-jR-f8q" firstAttribute="top" secondItem="juo-0J-oP5" secondAttribute="top" constant="37" id="4yc-bd-aLt"/>
+                            <constraint firstItem="lMG-hh-mHM" firstAttribute="centerY" secondItem="juo-0J-oP5" secondAttribute="centerY" constant="207" id="8Ai-uw-GAY"/>
+                            <constraint firstItem="zjO-jR-f8q" firstAttribute="centerX" secondItem="juo-0J-oP5" secondAttribute="centerX" id="EJI-RY-asB"/>
+                            <constraint firstItem="clj-3j-V5c" firstAttribute="top" secondItem="zjO-jR-f8q" secondAttribute="bottom" constant="68" id="YBG-QI-jL8"/>
+                            <constraint firstItem="lMG-hh-mHM" firstAttribute="centerX" secondItem="juo-0J-oP5" secondAttribute="centerX" id="uTW-Bb-w28"/>
+                            <constraint firstItem="zjO-jR-f8q" firstAttribute="centerX" secondItem="clj-3j-V5c" secondAttribute="centerX" id="who-xy-OtW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="juo-0J-oP5"/>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="KDl-fw-INA"/>
-                                <exclude reference="B2k-Gk-V6t"/>
-                                <exclude reference="C0A-pn-yyE"/>
-                                <exclude reference="Qdn-ur-03e"/>
-                                <exclude reference="Un8-Hh-Rp4"/>
-                                <exclude reference="VTe-3W-lTC"/>
-                                <exclude reference="gPN-n4-UN1"/>
-                                <exclude reference="lFK-5p-M3e"/>
-                                <exclude reference="vjZ-AI-I7p"/>
-                                <exclude reference="BbR-fp-EkK"/>
-                                <exclude reference="eVm-ZL-xWD"/>
-                                <exclude reference="kTa-M5-8m5"/>
-                                <exclude reference="uwM-JY-Xv7"/>
-                            </mask>
-                        </variation>
-                        <variation key="widthClass=regular">
-                            <mask key="constraints">
-                                <include reference="KDl-fw-INA"/>
-                                <include reference="B2k-Gk-V6t"/>
-                                <include reference="Qdn-ur-03e"/>
-                                <include reference="Un8-Hh-Rp4"/>
-                                <include reference="gPN-n4-UN1"/>
-                                <include reference="BbR-fp-EkK"/>
-                                <include reference="eVm-ZL-xWD"/>
-                                <include reference="uwM-JY-Xv7"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=regular-widthClass=compact">
-                            <mask key="constraints">
-                                <include reference="C0A-pn-yyE"/>
-                                <include reference="VTe-3W-lTC"/>
-                                <include reference="lFK-5p-M3e"/>
-                                <include reference="vjZ-AI-I7p"/>
-                                <include reference="kTa-M5-8m5"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
                         <outlet property="Menu" destination="zjO-jR-f8q" id="jAB-cK-hl1"/>
@@ -144,14 +58,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Yp-IE-vaH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-260" y="66.502463054187189"/>
+            <point key="canvasLocation" x="-263.768115942029" y="64.402173913043484"/>
         </scene>
         <!--Solo Launcher-->
         <scene sceneID="tXr-a1-R10">
             <objects>
                 <viewController id="BV1-FR-VrT" customClass="soloLauncher" customModule="SoccerPong" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
@@ -166,35 +80,33 @@
             <objects>
                 <viewController storyboardIdentifier="gameLauncher" id="Oax-H6-8ek" customClass="gameSelector" customModule="SoccerPong" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5yx-ne-SP3">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PZm-zM-vtO">
-                                <rect key="frame" x="208" y="254" width="112" height="42"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="112" id="zMe-ND-rmd"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="2 Player"/>
-                                <connections>
-                                    <action selector="multiPlayer:" destination="Oax-H6-8ek" eventType="touchUpInside" id="Qpw-74-u16"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bJx-Z7-CEt">
-                                <rect key="frame" x="0.0" y="252" width="94" height="46"/>
+                                <rect key="frame" x="161" y="118" width="94" height="46"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <state key="normal" title="1 Player"/>
                                 <connections>
                                     <action selector="singlePlayer:" destination="Oax-H6-8ek" eventType="touchUpInside" id="pMh-RM-v8z"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PZm-zM-vtO">
+                                <rect key="frame" x="88.5" y="707" width="237" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="2 Player"/>
+                                <connections>
+                                    <action selector="multiPlayer:" destination="Oax-H6-8ek" eventType="touchUpInside" id="Qpw-74-u16"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="bJx-Z7-CEt" firstAttribute="top" secondItem="bbf-v2-gZ3" secondAttribute="top" constant="232" id="4qw-Em-ue1"/>
-                            <constraint firstAttribute="trailing" secondItem="PZm-zM-vtO" secondAttribute="trailing" id="stC-l0-4Ca"/>
-                            <constraint firstItem="bJx-Z7-CEt" firstAttribute="leading" secondItem="5yx-ne-SP3" secondAttribute="leading" id="suh-5U-orC"/>
-                            <constraint firstItem="bJx-Z7-CEt" firstAttribute="centerY" secondItem="PZm-zM-vtO" secondAttribute="centerY" id="wYl-nc-M3z"/>
+                            <constraint firstItem="PZm-zM-vtO" firstAttribute="width" secondItem="5yx-ne-SP3" secondAttribute="height" multiplier="127:480" id="BbD-P7-sRt"/>
+                            <constraint firstItem="PZm-zM-vtO" firstAttribute="centerX" secondItem="5yx-ne-SP3" secondAttribute="centerX" id="KqB-vn-cys"/>
+                            <constraint firstItem="bbf-v2-gZ3" firstAttribute="bottom" secondItem="PZm-zM-vtO" secondAttribute="bottom" constant="113" id="L9D-2W-SFa"/>
+                            <constraint firstItem="PZm-zM-vtO" firstAttribute="centerX" secondItem="bJx-Z7-CEt" secondAttribute="centerX" constant="-1" id="QVd-Ex-5zg"/>
+                            <constraint firstItem="bJx-Z7-CEt" firstAttribute="top" secondItem="bbf-v2-gZ3" secondAttribute="top" constant="74" id="V1F-3J-1wi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bbf-v2-gZ3"/>
                     </view>
@@ -204,7 +116,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2w6-8C-oyh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="130.40000000000001" y="989.95502248875573"/>
+            <point key="canvasLocation" x="128.98550724637681" y="988.39285714285711"/>
         </scene>
     </scenes>
 </document>

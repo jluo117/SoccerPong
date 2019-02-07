@@ -8,6 +8,7 @@
 
 import UIKit
 import GameKit
+import Firebase
 class menu: UIViewController {
 
     
@@ -15,6 +16,8 @@ class menu: UIViewController {
     @IBOutlet weak var Menu: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        let functions = Functions.functions()
+        functions.httpsCallable("helloWorld")
         self.authPlayer()
        // Menu.frame = CGRect(x: UIScreen.main.bounds.width / 3.5, y: 0, width: UIScreen.main.bounds.width / 4, height: UIScreen.main.bounds.width / 4)
         // Do any additional setup after loading the view.

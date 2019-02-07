@@ -300,7 +300,6 @@ class soloPlay: SKScene {
             return
         }
         if (self.gameOver){
-            
             return
         }
 
@@ -415,6 +414,8 @@ class soloPlay: SKScene {
                 }
                 var globalScore = 9999
                 let ref = Database.database().reference()
+                    let functions = Functions.functions()
+                    functions.httpsCallable("helloWorld")   
                 ref.observe(.value) { snapshot in
                         let value = snapshot.value as? NSDictionary
                         globalScore = Int(value!["Score"] as! Int)
