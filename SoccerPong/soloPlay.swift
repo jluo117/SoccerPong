@@ -412,13 +412,16 @@ class soloPlay: SKScene {
                 for i in self.children{
                     i.isPaused = true
                 }
-                var globalScore = 9999
-                let ref = Database.database().reference()
-                    let functions = Functions.functions()
-                    functions.httpsCallable("helloWorld")   
+                    var globalScore = 9999
+                    let ref = Database.database().reference()
+                    let thread = DispatchGroup()
+                    thread.enter()
                 ref.observe(.value) { snapshot in
                         let value = snapshot.value as? NSDictionary
                         globalScore = Int(value!["Score"] as! Int)
+                        thread.leave()
+                    }
+                    thread.notify(queue: .main){
                         if (self.score > globalScore){
                             ref.setValue(["Score": self.score])
                             self.onlineScore.text = "Global HighScore " + String(self.score)
@@ -426,7 +429,8 @@ class soloPlay: SKScene {
                         else{
                             self.onlineScore.text = "Global HighScore " + String(globalScore)
                         }
-            }
+                    }
+            
                
                 var highScore = 0
                 
@@ -546,7 +550,7 @@ class soloPlay: SKScene {
         }
         self.userScore?.text = String(score)
         self.user2Score?.text = String(score2)
-        if (score >= 15){
+        if (score >= 5){
             gameOver = true
             endLabel.text = "Player 1 Wins"
             endLabel.isHidden = false
@@ -557,7 +561,7 @@ class soloPlay: SKScene {
                 i.nodeID.isHidden = true
             }
         }
-        else if (score2 >= 15){
+        else if (score2 >= 5){
             gameOver = true
             endLabel.text = "Player 2 Wins"
             endLabel.isHidden = false
